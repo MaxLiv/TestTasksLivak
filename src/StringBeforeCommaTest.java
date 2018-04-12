@@ -4,11 +4,12 @@ import java.io.IOException;
 
 public class StringBeforeCommaTest {
 
-    public static void main(String[] args) {
+    private static final int FILE_PATH_INDEX = 0;
 
+    public static void main(String... args) {
 
         StringBuilder contentBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader("/home/max/IdeaProjects/untitled/src/testTasks/test.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(args[FILE_PATH_INDEX]))) {
             int CurrentChar;
             while ((CurrentChar = br.read()) != -1) {
                 char ch = (char) CurrentChar;
