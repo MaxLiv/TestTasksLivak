@@ -1,4 +1,21 @@
+import java.util.Scanner;
+
 public class AddTest {
+
+
+    public static void main(String arg[]) {
+        new AddTest().run();
+    }
+
+    private void run() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a");
+        int a = scanner.nextInt();
+        System.out.println("Enter b");
+        int b = scanner.nextInt();
+        System.out.println(a + " + " + b + " = " + Add(a, b));
+    }
 
     private static int Add(int x, int y) {
         while (y != 0) {
@@ -7,10 +24,5 @@ public class AddTest {
             y = carry << 1;
         }
         return x;
-    }
-
-    // Driver code
-    public static void main(String arg[]) {
-        System.out.println(Add(5, 7));
     }
 }

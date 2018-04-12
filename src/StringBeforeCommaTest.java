@@ -1,15 +1,20 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class StringBeforeCommaTest {
 
-    private static final int FILE_PATH_INDEX = 0;
-
     public static void main(String... args) {
 
+      new StringBeforeCommaTest().run();
+    }
+
+    private void run(){
+        String fullPath = new File("").getAbsolutePath();
+
         StringBuilder contentBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(args[FILE_PATH_INDEX]))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fullPath + "/test.txt"))) {
             int CurrentChar;
             while ((CurrentChar = br.read()) != -1) {
                 char ch = (char) CurrentChar;
@@ -17,6 +22,7 @@ public class StringBeforeCommaTest {
                     break;
                 contentBuilder.append(ch);
             }
+
             System.out.println(contentBuilder.toString());
         } catch (IOException e) {
             e.printStackTrace();
